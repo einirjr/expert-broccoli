@@ -1,0 +1,8 @@
+language: csharp
+solution: dinwin.sln
+mono: none
+dotnet: 2.1.403
+install:
+ - nuget restore dinwin.sln
+script:
+ - dotnet restore
