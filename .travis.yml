@@ -5,10 +5,3 @@ dotnet: 2.1.403
 script:
 - dotnet build
 - dotnet test dinwin.tests
-#deploy:
-#  provider: heroku
-#  api_key:
-#    secure: GZ11+Wm/0fX+GNgKh6eacw8MJ7RpYckB6b0LtP+Q2pAfyQuhPjaJBZXaJdmZW5qjWsjh0syxcDheuUxkFuajflNgx9YZoj3fSePSlwkTRIagMhzn2V825zrJnxaXTc7r9nzdd+r6Fu+rJPZ2iYZOm6VXoYtYaEW+NlwXAfJqSEq9U6fv1IWeI18x8iXecZdvCZ2V9FlkMbHOu2ksSbXg9gknkaL4q2YxEQ3QzqtbpFcLBA0t4QThKMUaVLqsi3dtdGIYbvUjZZymjLGy99lpfOR3b4zcHh/Z0plJqco5QAIzSDhrFvvFlEvGeB4VlSPXq3Jm+VXdowsGB3ewsEjci9h1l01d1QqHUOBOfk20CuOw2j+rj+DTdfF7nGXDT5q9Mu6vJ/V4hWPJhlIDL0pd+ODPWeMu7RpxKlVVpZqXv5iWu+1FhCI8m/om3z7Htp7Rg3ZsBVhilXwEHBaVsH9mq1jsf0DdoFt9anDxhi9VNXjKDJxGeAnMjrMdZgF/BnKYtkF2nbbVpYH54FFMTuO0iMTv7qNEg2Vurm6yDOMBvZG51S/xAQpo+yCyIVSyfbhw4W/b/ojPa6mxz/AQVp7g57zuouCp6Pi7Y/rVWb8Uot5RMGcAkK6Vx/NW6I4zoeVr1YnqifrzLxpwK2IsnTCbjEHChX5y0Xzp5hOeiQulaHA=
-#  app: expert-broccoli
-#  on:
-#    repo: einirjr/expert-broccoli
