@@ -13,7 +13,7 @@ namespace dinwin.Pages
     {
         public void OnGet()
         {
-            KeepAwake.Start();
+            //KeepAwake.Start();
         }
     }
 }
