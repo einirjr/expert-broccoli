@@ -41,6 +41,12 @@ namespace dinwin
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["AuthFBAppId"];
+                facebookOptions.AppSecret = Configuration["AuthFBAppSecret"];
+            });
+
             services.AddMvc()
                 .AddRazorPagesOptions(options =>
                 {
