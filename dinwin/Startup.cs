@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using dinwin.Data;
 using dinwin.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace dinwin
 {
@@ -41,11 +42,23 @@ namespace dinwin
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddAuthentication().AddFacebook(facebookOptions =>
-            {
-                facebookOptions.AppId = Configuration["AuthFBAppId"];
-                facebookOptions.AppSecret = Configuration["AuthFBAppSecret"];
-            });
+            services.AddAuthentication(options =>
+                {
+                    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                })
+                .AddGoogle(googleOptions =>
+                {
+                    googleOptions.ClientId = Configuration["AuthGoogleClientId"];
+                    googleOptions.ClientSecret = Configuration["AuthGoogleClientSecret"];
+                })
+                .AddFacebook(facebookOptions =>
+                {
+                    facebookOptions.AppId = Configuration["AuthFBAppId"];
+                    facebookOptions.AppSecret = Configuration["AuthFBAppSecret"];
+                })
+                .AddCookie();
 
             services.AddMvc()
                 .AddRazorPagesOptions(options =>
@@ -72,6 +85,10 @@ namespace dinwin
             {
                 app.UseExceptionHandler("/Error");
             }
+
+            app.UseAuthentication();
+
+            app.UseHttpsRedirection();
 
             app.UseStaticFiles();
 
