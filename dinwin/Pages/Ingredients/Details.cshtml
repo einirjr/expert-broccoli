@@ -1,12 +1,6 @@
 ﻿@page
 @model dinwin.Pages.Ingredients.DetailsModel
 
-@{
-    ViewData["Title"] = "Details";
-}
-
-<h2>Details</h2>
-
 <div>
     <h4>Ingredient</h4>
     <hr />
@@ -16,6 +10,12 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Ingredient.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingredient.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ingredient.Category)
         </dd>
     </dl>
 </div>

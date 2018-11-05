@@ -30,7 +30,7 @@ namespace dinwin.Pages.Ingredients
                 return NotFound();
             }
 
-            Ingredient = await _context.Ingredient.SingleOrDefaultAsync(m => m.Id == id);
+            Ingredient = await _context.Ingredient.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Ingredient == null)
             {
